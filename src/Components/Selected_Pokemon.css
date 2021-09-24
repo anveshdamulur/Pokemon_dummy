@@ -1,9 +1,43 @@
+.pokemon_container{
+    width: 100%;
+    border: 2px solid green;   
+}
+.pokemon_container_details{
+    width: 30%;
+    border: 2px solid red;
+}
+
 #heading{
     color : #fdcc07;
     font-size: 20px;
+    text-align: center;
+
 }
 
 #input_value{
     color: #fdcc07;
+    width: 300px;
+    height: 35px;
+    font-weight: 700;
+    font-size: 15px;
+    margin-left: 10px;
+    border: 2px solid #3a5d9f;
 }
 
+#input_value ::placeholder{
+    color: #c1c8ca;
+}
+
+.pokemon-list {
+    width: 300px;
+    height: 40px;
+    margin: 10px 0 10px 10px;
+    background-color: #3a5d9f;
+    border-radius: 10px;
+    padding-left:10px;
+    
+}
+.pokemon-list .list-names{
+    font-size: 20px;
+    padding-top: 5px;
+} 
