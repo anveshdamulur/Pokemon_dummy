@@ -1,0 +1,9 @@
+.root {
+    display: flex;
+    flex-direction: column;
+  }
+  img{
+      max-width: 200px;
+      margin: 0 auto 12px auto; 
+
+  }
