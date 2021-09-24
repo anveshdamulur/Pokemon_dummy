@@ -1,8 +1,15 @@
+import { useQuery } from 'graphql-hooks';
 import React, { useState } from 'react'
+import { GET_SELECTED_POKEMON } from '../graphql/getSelectedPokemon';
+import PokemonInfo from './PokemonInfo';
 import "./Selected_Pokemon.css"
 const Selected_Pokemon = ({data}) => {
-    console.log(data)
     const [searchInput, setSearchInput] = useState("");    
+    const listItem  = useQuery(GET_SELECTED_POKEMON, {
+        variables :{
+            name : searchInput
+        }
+    })
     return(
         <div className= "pokemon_container">
             <div className="pokemon_container_details">
@@ -11,18 +18,19 @@ const Selected_Pokemon = ({data}) => {
                 {
                 data.length && data.filter((info) =>{
                     if(searchInput === ""){
-                        console.log(searchInput)
+                        // console.log(searchInput)
                         return info
                     }
                     else if (info.name.toLowerCase().includes(searchInput.toLowerCase())){
                         return info
                     }
-                }).map(info => {
+                }).map(info => {                  
                         return (
-                        <div key = {info.id} className="pokemon-list">
-                            <h1 className="list-names">{info.name.toUpperCase()}</h1>
-                        </div>
-                        )
+                            <div key = {info.id} className="pokemon-list">
+                              <h1 className="list-names">{info.name.toUpperCase()}</h1>
+                              {(info.name === searchInput)? <PokemonInfo details = {listItem.data}/> : ""}
+                            </div>                      
+                            )            
                     })
                 }
             </div>

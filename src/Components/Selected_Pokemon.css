@@ -4,13 +4,12 @@
 }
 .pokemon_container_details{
     width: 30%;
-    border: 2px solid red;
 }
 
 #heading{
     color : #fdcc07;
     font-size: 20px;
-    text-align: center;
+    margin-left: 60px;
 
 }
 

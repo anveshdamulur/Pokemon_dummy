@@ -1,7 +1,7 @@
 import { GraphQLClient, ClientContext } from 'graphql-hooks';
 import Container from './Container';
 import Logo from './Logo';
-import Container_Pokemons from './Components/Container_Pokemons';
+import ContainerPokemons from './Components/ContainerPokemons';
 import "./App.css"
 const client = new GraphQLClient({
   url: "https://p5k91xxvoq.sse.codesandbox.io/",
@@ -13,7 +13,7 @@ export default function App() {
       <>
         <Container>
           <Logo />  
-          <Container_Pokemons />        
+          <ContainerPokemons />        
         </Container>
       </>
     </ClientContext.Provider>

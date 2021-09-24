@@ -2,7 +2,7 @@ import { useQuery } from 'graphql-hooks'
 import { GET_ALL_POKEMONS } from '../graphql/getAllPokemons'
 import React from 'react'
 import "./Container_Pokemons.css"
-import Selected_Pokemon from './Selected_Pokemon'
+import SelectedPokemon from './SelectedPokemon'
 const Container_Pokemons = () => {  
     const { loading, error, data } = useQuery(GET_ALL_POKEMONS, {
         variables :{
@@ -14,7 +14,7 @@ const Container_Pokemons = () => {
     console.log(data.Pokemons)
     return (   
         <div className="container_pokemons">
-            <Selected_Pokemon 
+            <SelectedPokemon 
                 data = {data.Pokemons} 
             />
         </div>

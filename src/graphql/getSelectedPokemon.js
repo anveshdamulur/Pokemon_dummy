@@ -1,5 +1,5 @@
 export const GET_SELECTED_POKEMON = `
-query Pokemon($name: String) {
+query Pokemon($name: String!) {
     Pokemon(name: $name){
     id
     name
