@@ -1,9 +1,21 @@
-.pokemon_container{
-    width: 100%;
-    border: 2px solid green;   
+.pokemon_container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
 }
-.pokemon_container_details{
-    width: 30%;
+
+.pokemon_container_details {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.pokemon_container_details_list {
+    padding: 20px;
+}
+
+.pokemon_selected {
+    padding: 20px;
+    flex-grow: 1
 }
 
 #heading{
@@ -23,6 +35,10 @@
     border: 2px solid #3a5d9f;
 }
 
+#input_value::focus {
+    cursor: pointer;
+}
+
 #input_value ::placeholder{
     color: #c1c8ca;
 }
@@ -34,9 +50,15 @@
     background-color: #3a5d9f;
     border-radius: 10px;
     padding-left:10px;
-    
+
 }
+
+.pokemon-list:hover {
+    cursor: pointer;
+}
+
+
 .pokemon-list .list-names{
     font-size: 20px;
     padding-top: 5px;
-} 
+}

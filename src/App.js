@@ -1,8 +1,11 @@
-import { GraphQLClient, ClientContext } from 'graphql-hooks';
-import Container from './Container';
-import Logo from './Logo';
-import ContainerPokemons from './Components/ContainerPokemons';
-import "./App.css"
+import "./App.css";
+
+import { ClientContext, GraphQLClient } from "graphql-hooks";
+
+import Container from "./Container";
+import Logo from "./Logo";
+import MainPage from "./Pages/MainPage/MainPage";
+
 const client = new GraphQLClient({
   url: "https://p5k91xxvoq.sse.codesandbox.io/",
 });
@@ -12,8 +15,8 @@ export default function App() {
     <ClientContext.Provider value={client}>
       <>
         <Container>
-          <Logo />  
-          <ContainerPokemons />        
+          <Logo />
+          <MainPage></MainPage>
         </Container>
       </>
     </ClientContext.Provider>

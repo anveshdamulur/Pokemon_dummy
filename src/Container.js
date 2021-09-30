@@ -1,6 +1,7 @@
-import styles from './Logo.module.css';
-import './Container.css'
+import "./Container.css";
+
+import styles from "./Logo.module.css";
+
 export default function Container(props) {
-    console.log(props)
   return <div {...props} className={styles.root} />;
 }

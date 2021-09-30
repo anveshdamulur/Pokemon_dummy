@@ -1,0 +1,15 @@
+.stat {
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+    align-items: baseline;
+}
+
+.stat_name {
+    flex-grow: 1;
+    text-transform: uppercase;
+}
+
+.stat_value {
+    font-size: xx-large;
+}

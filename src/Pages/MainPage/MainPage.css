@@ -1,0 +1,20 @@
+.grid-container {
+    height: calc(100vh - 780px);
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 700px;
+}
+
+.selected_squad {
+    padding: 20px;
+    height: calc(100% - 40px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
