@@ -51,6 +51,7 @@
     border-radius: 10px;
     padding-left:10px;
 
+
 }
 
 .pokemon-list:hover {
@@ -61,4 +62,5 @@
 .pokemon-list .list-names{
     font-size: 20px;
     padding-top: 5px;
+    color: #fdcc07;
 }

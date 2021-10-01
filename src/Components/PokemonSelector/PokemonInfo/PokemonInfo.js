@@ -47,7 +47,7 @@ const PokemonInfo = ({ selectedPokemon, onSave }) => {
               alt="Avatar"
               style={{ width: "100%" }}
             />
-            <h1>{data?.Pokemon.name}</h1>
+            <h1>{data?.Pokemon.name.toUpperCase()}</h1>
             <button
               className="pokemon_info_data_save"
               onClick={() => onSave(data?.Pokemon)}

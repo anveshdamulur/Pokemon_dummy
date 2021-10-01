@@ -41,6 +41,8 @@ const Squad = ({ data }) => {
         return "#c1c8ca";
     }
   };
+  console.log(data);
+
   return (
     <div className="squad-container" style={{ backgroundColor: getColor() }}>
       {data === null ? (
@@ -48,9 +50,11 @@ const Squad = ({ data }) => {
       ) : (
         <>
           <img src={data?.image} alt="Avatar" style={{ width: "100%" }} />
-          <h2>{data.name}</h2>
+          <h2>{data.name.toUpperCase()}</h2>
           {data?.abilities.map((ability) => (
-            <label>{ability.name}</label>
+            <div className="label-container">
+              <label>{ability.name}</label>
+            </div>
           ))}
         </>
       )}

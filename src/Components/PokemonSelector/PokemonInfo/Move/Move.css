@@ -1,7 +1,13 @@
 .move {
     padding: 5px;
-    border: 1px solid red;
+    border: 1px solid #3a5d9f;
 }
-
+.move h3{
+    color: #fdcc07;
+    font-size: 12px;
+}
 .move_name {
+    font-size: 18px;
+    color: #3a5d9f;
+    font-weight: 700;
 }

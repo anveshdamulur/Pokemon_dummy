@@ -4,4 +4,19 @@
     justify-content: center;
     align-content: center;
     flex-direction: column;
+    padding: 25px;
+}
+.label-container{
+    height: auto;
+    width: 100%;
+    display: flex;
+    margin-top: 10px;
+}
+.label-container label{
+    background: #FFFF;
+    margin: 2px;
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    text-align: start;
 }
