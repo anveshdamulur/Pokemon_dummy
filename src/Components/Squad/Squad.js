@@ -41,7 +41,6 @@ const Squad = ({ data }) => {
         return "#c1c8ca";
     }
   };
-  console.log(data);
 
   return (
     <div className="squad-container" style={{ backgroundColor: getColor() }}>
@@ -52,7 +51,7 @@ const Squad = ({ data }) => {
           <img src={data?.image} alt="Avatar" style={{ width: "100%" }} />
           <h2>{data.name.toUpperCase()}</h2>
           {data?.abilities.map((ability) => (
-            <div className="label-container">
+            <div key={`squad-${ability.name}`} className="label-container">
               <label>{ability.name}</label>
             </div>
           ))}

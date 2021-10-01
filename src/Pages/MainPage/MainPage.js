@@ -42,8 +42,8 @@ const MainPage = () => {
       <div className="footer">
         <h1>SELECTED SQUAD</h1>
         <div className="selected_squad">
-          {squads.map((squad) => (
-            <Squad data={squad}></Squad>
+          {squads.map((squad, index) => (
+            <Squad key={`squad-${index}`} data={squad}></Squad>
           ))}
         </div>
       </div>

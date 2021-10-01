@@ -1,14 +1,14 @@
 import "./PokemonInfo.css";
 
 import { useQuery } from "graphql-hooks";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { GET_SELECTED_POKEMON } from "../../../graphql/getSelectedPokemon";
 import Stat from "./Stat/Stat";
 import Move from "./Move/Move";
 
 const PokemonInfo = ({ selectedPokemon, onSave }) => {
-  const [abilities, setAbilities] = useState([]);
+  const [pokemon, setPokemon] = useState(null);
   const tutorMoves = [
     "Slam",
     "Stomp",
@@ -33,24 +33,22 @@ const PokemonInfo = ({ selectedPokemon, onSave }) => {
     },
   });
 
-  if (data && data?.Pokemon) {
-    // setAbilities(data?.Pokemon.abilities);
-  }
+  useEffect(() => {
+    if (!loading && data) {
+      setPokemon(data?.Pokemon);
+    }
+  }, [loading, data]);
 
   return (
     <>
-      {data && (
+      {pokemon && (
         <div className="pokemon_info">
           <div className="pokemon_info_data">
-            <img
-              src={data?.Pokemon.image}
-              alt="Avatar"
-              style={{ width: "100%" }}
-            />
-            <h1>{data?.Pokemon.name.toUpperCase()}</h1>
+            <img src={pokemon.image} alt="Avatar" style={{ width: "100%" }} />
+            <h1>{pokemon.name.toUpperCase()}</h1>
             <button
               className="pokemon_info_data_save"
-              onClick={() => onSave(data?.Pokemon)}
+              onClick={() => onSave(pokemon)}
             >
               SAVE POKEMON
             </button>
@@ -58,18 +56,18 @@ const PokemonInfo = ({ selectedPokemon, onSave }) => {
           <div className="pokemon_info_capabilities">
             <h2>STATS</h2>
             <div className="pokemon_info_stat">
-              {data?.Pokemon.stats.map((stat) => (
+              {pokemon.stats.map((stat) => (
                 <Stat
-                  key={`${data?.Pokemon.id}-${stat.name}`}
+                  key={`${pokemon.id}-${stat.name}`}
                   name={stat.name}
                   value={stat.value}
                 ></Stat>
               ))}
             </div>
             <div className="pokemon_info_ability">
-              {data?.Pokemon.abilities.map((ability) => (
+              {pokemon.abilities.map((ability) => (
                 <Move
-                  key={`${data?.Pokemon.id}-${ability.name}`}
+                  key={`${pokemon.id}-${ability.name}`}
                   move={ability.name}
                 ></Move>
               ))}
@@ -82,8 +80,25 @@ const PokemonInfo = ({ selectedPokemon, onSave }) => {
             <ul className="pokemon_info_tutor_machine_list">
               {tutorMoves.map((level) => (
                 <li
-                  key={`${data?.Pokemon.id}-${level}`}
-                  onClick={() => console.log("say hi")}
+                  key={`${pokemon.id}-${level}`}
+                  id={level}
+                  onClick={(e) => {
+                    const newAbilities = [...pokemon.abilities];
+                    const levelIndex = newAbilities
+                      .map((a) => a.name)
+                      .indexOf(level);
+                    if (levelIndex >= 0) {
+                      newAbilities.splice(levelIndex, 1);
+                    } else {
+                      if (pokemon.abilities.length === 4) return;
+                      newAbilities.push({ name: e.target.id });
+                    }
+                    const newPokemon = {
+                      ...pokemon,
+                      abilities: newAbilities,
+                    };
+                    setPokemon(newPokemon);
+                  }}
                 >
                   {level}
                 </li>
