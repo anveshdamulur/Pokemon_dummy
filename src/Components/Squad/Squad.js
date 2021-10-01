@@ -48,13 +48,26 @@ const Squad = ({ data }) => {
         "empty"
       ) : (
         <>
-          <img src={data?.image} alt="Avatar" style={{ width: "100%" }} />
+          {/* <img src={data?.image} alt="Avatar" style={{ width: "100%" }} />
           <h2>{data.name.toUpperCase()}</h2>
           {data?.abilities.map((ability) => (
             <div key={`squad-${ability.name}`} className="label-container">
               <label>{ability.name}</label>
             </div>
-          ))}
+          ))} */}
+           <div className="squad-container-info">
+            <div className="squad-container-info-image">
+              <img src={data?.image} alt="Avatar"/>
+            </div>
+            <div className="squad-heading">
+              <h2>{data.name.toUpperCase()}</h2>
+            </div>
+              {data?.abilities.slice(0,2).map((ability) => (
+                <div className="label-container">
+                  <label>{ability.name}</label>
+                </div>
+              ))}
+            </div>
         </>
       )}
     </div>

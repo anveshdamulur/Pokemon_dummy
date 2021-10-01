@@ -14,7 +14,6 @@
 }
 
 .pokemon_selected {
-    padding: 20px;
     flex-grow: 1
 }
 
@@ -33,6 +32,8 @@
     font-size: 15px;
     margin-left: 10px;
     border: 2px solid #3a5d9f;
+    border-radius: 10px;
+
 }
 
 #input_value::focus {
@@ -50,14 +51,11 @@
     background-color: #3a5d9f;
     border-radius: 10px;
     padding-left:10px;
-
-
 }
 
 .pokemon-list:hover {
     cursor: pointer;
 }
-
 
 .pokemon-list .list-names{
     font-size: 20px;

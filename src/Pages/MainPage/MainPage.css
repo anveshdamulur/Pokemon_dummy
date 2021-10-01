@@ -1,5 +1,7 @@
 .grid-container {
-    height: 500px;
+    /* height: 500px; */
+    height:calc(100vh - 200px);
+
 }
 
 .footer {
@@ -8,17 +10,19 @@
     bottom: 0;
     width: 100%;
     text-align: center;
-    background: #fff;
+    background: #ffff;
     height: 40%;
-
+    overflow: hidden;
 
 }
 .footer h1{
     color: #fdcc07;
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 5px;
 }
 .selected_squad {
-    padding: 20px;
-    height: calc(100% - 40px);
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

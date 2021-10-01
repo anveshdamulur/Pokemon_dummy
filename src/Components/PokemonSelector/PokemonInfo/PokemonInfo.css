@@ -2,11 +2,14 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    height: calc(100vh - 200px);
+    padding: 10px;
 }
 
 .pokemon_info_data {
-    width: 8%;
+    height: 100px;
     color: #3a5d9f;
+    padding: 0;
 }
 .pokemon_info_data h1{
     font-size: 20px;
@@ -64,4 +67,6 @@
 }
 .pokemon_info_tutor_machine h2{
     color: #fdcc07;
+    font-size: 15px;
+
 }
