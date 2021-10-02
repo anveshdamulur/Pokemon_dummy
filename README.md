@@ -2,7 +2,9 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-###once you clone, Open terminal and run **npm install **
+### `npm install`
+
+once you clone, Open terminal and run the above command
 It will install alll the dependacies
 
 ### `npm start`
