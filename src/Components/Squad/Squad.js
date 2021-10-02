@@ -62,7 +62,7 @@ const Squad = ({ data }) => {
             <div className="squad-heading">
               <h2>{data.name.toUpperCase()}</h2>
             </div>
-              {data?.abilities.slice(0,2).map((ability) => (
+              {data?.abilities.slice(0,(data.abilities.length)).map((ability) => (
                 <div className="label-container">
                   <label>{ability.name}</label>
                 </div>
