@@ -17,10 +17,14 @@ The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
 
-### `You can see the output here`
+### `You can see the output below`
 
-![OutputTwo](https://user-images.githubusercontent.com/34277793/135711419-8bb0bb8f-fc95-4bc7-be87-41697d726a65.PNG)
+![Capture](https://user-images.githubusercontent.com/34277793/135711404-afadb354-b388-4343-8f46-0545bc247f0c.PNG
 
 ### `Output 2`
 
-![Capture](https://user-images.githubusercontent.com/34277793/135711404-afadb354-b388-4343-8f46-0545bc247f0c.PNG)
+![OutputTwo](https://user-images.githubusercontent.com/34277793/135711419-8bb0bb8f-fc95-4bc7-be87-41697d726a65.PNG)
+
+### `Output 3`
+
+![outputThree](https://user-images.githubusercontent.com/34277793/135711571-9907c702-6073-4794-a924-df16cb834b29.png)
